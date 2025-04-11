@@ -14,7 +14,11 @@
             <div class="profile-info">
                 <span class="pokemon-number">#{{ pokemon['id'] }}</span>
                 <h1>{{ pokemon['name'] }}</h1>
-                <p class="description">{{ pokemon['description'] }}</p>
+                {% if special_message %}
+                    <p class="special-message">{{ special_message }}</p>
+                {% else %}
+                    <p class="description">{{ pokemon['description'] }}</p>
+                {% endif %}
             </div>
         </div>
     </div>
