@@ -30,7 +30,7 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
           args: >
-            -Dsonar.projectKey=cursor-hello-world
+            -Dsonar.projectKey=liz-acosta_cursor-hello-world
             -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.sources=.
