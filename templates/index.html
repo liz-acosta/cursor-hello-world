@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Pokedex</h1>
+        <div class="pokemon-grid">
+            {% for poke in pokemon %}
+            <a href="{{ url_for('pokemon_profile', id=poke['id']) }}" class="pokemon-card">
+                <img src="{{ poke['image'] }}" alt="{{ poke['name'] }}">
+                <div class="pokemon-info">
+                    <span class="pokemon-number">#{{ poke['id'] }}</span>
+                    <h2>{{ poke['name'] }}</h2>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html> 
