@@ -23,8 +23,11 @@ def pokemon_profile(id):
     
     # Special case for Pikachu
     if id == 25:  # Pikachu's ID
+        # Create a modified pokemon dict with the X emoji
+        modified_pokemon = dict(pokemon)
+        modified_pokemon['image'] = '❌'  # Red X emoji
         return render_template('profile.html', 
-                             pokemon=pokemon,
+                             pokemon=modified_pokemon,
                              special_message="Oh no! Team Rocket has captured Pikachu!")
     
     return render_template('profile.html', pokemon=pokemon)

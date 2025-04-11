@@ -10,7 +10,11 @@
     <div class="container">
         <a href="{{ url_for('index') }}" class="back-button">← Back to Pokedex</a>
         <div class="pokemon-profile">
-            <img src="{{ pokemon['image'] }}" alt="{{ pokemon['name'] }}" class="profile-image">
+            {% if pokemon['image'].startswith('http') %}
+                <img src="{{ pokemon['image'] }}" alt="{{ pokemon['name'] }}" class="profile-image">
+            {% else %}
+                <div class="emoji-display">{{ pokemon['image'] }}</div>
+            {% endif %}
             <div class="profile-info">
                 <span class="pokemon-number">#{{ pokemon['id'] }}</span>
                 <h1>{{ pokemon['name'] }}</h1>

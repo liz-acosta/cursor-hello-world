@@ -94,6 +94,24 @@ h1 {
     object-fit: contain;
 }
 
+.emoji-display {
+    font-size: 200px;
+    line-height: 1;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d32f2f;
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
 .profile-info {
     flex: 1;
 }
